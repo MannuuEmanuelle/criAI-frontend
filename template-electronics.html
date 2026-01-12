@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template - Eletrônicos</title>
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    .elec-hero{padding:40px 0;background:linear-gradient(90deg,#0b0610,#1f102b);color:#fff}
+    .elec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
+    .elec-card{background:rgba(255,255,255,.02);padding:12px;border-radius:10px;text-align:center}
+    .price{font-weight:800;margin-top:8px}
+    @media(max-width:900px){.elec-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Tech<span>Store</span></div>
+      <a href="index.html" class="btn">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="elec-hero container">
+      <h1>Eletrônicos em oferta</h1>
+      <p class="subtitle">Os melhores gadgets com garantia e frete rápido.</p>
+
+      <div class="elec-grid">
+        <div class="elec-card"><div class="thumb">Img</div><strong>Fone Pro</strong><div class="price">R$ 299,00</div></div>
+        <div class="elec-card"><div class="thumb">Img</div><strong>Smartwatch X</strong><div class="price">R$ 699,00</div></div>
+        <div class="elec-card"><div class="thumb">Img</div><strong>Drone Mini</strong><div class="price">R$ 999,00</div></div>
+        <div class="elec-card"><div class="thumb">Img</div><strong>Caixa Bluetooth</strong><div class="price">R$ 149,00</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 TechStore</div>
+  </footer>
+</body>
+</html>

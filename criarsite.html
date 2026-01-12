@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Catálogo | CriaAI</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/gerador.css">
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Cria<span>AI</span></div>
+      <nav>
+        <a href="index.html" style="margin-right: 15px;">Início</a>
+        <a href="models.html" class="btn outline">Modelos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="criarsite">
+    <section class="criarsite-card">
+      <h1>Crie seu site com IA</h1>
+      <p>Descreva seu negócio e os produtos que deseja listar.</p>
+
+      <form id="aiForm">
+        <textarea
+          id="prompt"
+          placeholder="Ex: Catálogo para uma doceria artesanal chamada 'Doce Magia', com tons rosa e marrom, listando brigadeiros e bolos de pote."
+          rows="5"
+          required
+        ></textarea>
+
+        <button type="submit" class="btn" id="generateBtn">
+          Gerar Catálogo Agora
+        </button>
+      </form>
+
+      <div id="previewContainer" style="display: none; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+          <p style="margin-bottom: 15px; color: #a78bfa;">✨ Site gerado com sucesso!</p>
+          <button class="btn" onclick="openPreview()">Visualizar Site em Nova Aba</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/generator.js"></script>
+</body>
+</html>

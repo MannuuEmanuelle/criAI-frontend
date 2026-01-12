@@ -1,0 +1,125 @@
+.criarsite {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+}
+
+.criarsite-card {
+  width: 100%;
+  max-width: 680px;
+  padding: 60px;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 40px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 50px 120px rgba(0,0,0,0.4);
+}
+
+.criarsite-card h1 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #fff, var(--lavender));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.criarsite-card p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.criarsite-card textarea {
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  font-size: 17px;
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: 24px;
+  transition: 0.3s;
+}
+
+.criarsite-card textarea:focus {
+  outline: none;
+  border-color: var(--lavender);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+}
+
+.criarsite-card .btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 18px;
+}
+
+
+
+@media (max-width: 480px) {
+
+  /* Criar site */
+  .criarsite {
+    padding: 32px 14px;
+  }
+
+  .criarsite-card {
+    padding: 32px 20px;
+    border-radius: 24px;
+  }
+
+  .criarsite-card h1 {
+    font-size: 26px;
+  }
+
+  .criarsite-card p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .criarsite-card textarea {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
+
+  .criarsite-card .btn {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
+
+  /* Auth */
+  .auth-container {
+    padding: 24px 14px;
+  }
+
+  .auth-card {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
+  .auth-card h2 {
+    font-size: 24px;
+  }
+
+  .auth-subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .auth-card input {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .auth-link {
+    font-size: 13px;
+  }
+}
+
+

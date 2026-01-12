@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Criar Conta | CriaAI</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Cria<span>AI</span></div>
+      <a href="index.html" class="btn outline">Voltar</a>
+    </div>
+  </header>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>Criar Conta</h2>
+      <p class="auth-subtitle">Comece a criar seus catálogos com IA hoje</p>
+
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Nome Completo" required>
+        <input type="email" id="regEmail" placeholder="E-mail" required>
+        <input type="password" id="regPassword" placeholder="Senha" required>
+
+        <button type="submit" class="btn">Criar Conta</button>
+      </form>
+
+      <p class="auth-link">
+        Já tem uma conta?
+        <a href="login.html">Fazer Login</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+.auth-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 48px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+  backdrop-filter: blur(15px);
+  text-align: center;
+}
+
+.auth-card h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-card input {
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--lavender);
+  background: rgba(255,255,255,0.1);
+}
+
+.auth-link {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.auth-link a {
+  color: var(--lavender);
+  font-weight: 600;
+}
+
+
+
+@media (max-width: 768px) {
+
+  /* Criar site */
+  .criarsite {
+    padding: 40px 16px;
+  }
+
+  .criarsite-card {
+    padding: 40px 32px;
+    border-radius: 32px;
+  }
+
+  .criarsite-card p {
+    margin-bottom: 32px;
+    font-size: 15px;
+  }
+
+  .criarsite-card textarea {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .criarsite-card .btn {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  /* Auth */
+  .auth-container {
+    padding: 32px 16px;
+  }
+
+  .auth-card {
+    padding: 36px 28px;
+    border-radius: 28px;
+  }
+
+  .auth-card h2 {
+    font-size: 28px;
+  }
+
+  .auth-subtitle {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template - Portfólio</title>
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    .pf-hero{padding:60px 0;background:linear-gradient(180deg,#120818,#1f102b);color:#fff;text-align:center}
+    .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+    .pf-card{background:rgba(255,255,255,.02);padding:20px;border-radius:12px}
+    .pf-card .thumb{height:160px;border-radius:8px;background:linear-gradient(135deg,#9f8ccf,#3a1b57);display:flex;align-items:center;justify-content:center;color:#fff}
+    @media(max-width:900px){.pf-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Art<span>folio</span></div>
+      <a href="index.html" class="btn">Início</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="pf-hero">
+      <div class="container">
+        <h1>Portfólio de Criação</h1>
+        <p class="subtitle">Projetos selecionados e estudos de caso.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="section-title"><h2>Projetos Recentes</h2></div>
+      <div class="pf-grid">
+        <div class="pf-card"><div class="thumb">Projeto A</div><h3>Identidade Visual</h3><p class="muted small">Marca para startup de tecnologia.</p></div>
+        <div class="pf-card"><div class="thumb">Projeto B</div><h3>Website Corporativo</h3><p class="muted small">Layout responsivo e CMS integrado.</p></div>
+        <div class="pf-card"><div class="thumb">Projeto C</div><h3>Campanha Digital</h3><p class="muted small">Peças e landing para performance.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 Artfolio — Portfólio</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+
+      :root{
+        --purple-deep:#1f102b;
+        --purple-grape:#3a1b57;
+        --lavender:#9f8ccf;
+        --glass: rgba(255,255,255,.08);
+      }
+      *{box-sizing:border-box;margin:0;padding:0}
+      body{
+        font-family:'Inter',sans-serif;
+        background: radial-gradient(1200px 600px at 20% -10%, #3a1b57 0%, transparent 60%),
+                    radial-gradient(1000px 500px at 80% 10%, #1f102b 0%, transparent 55%),
+                    linear-gradient(180deg, #120818, #0b0610 60%);
+        color:#fff;
+        line-height:1.6;
+      }
+      a{text-decoration:none;color:inherit}
+      .container{max-width:1200px;margin:0 auto;padding:0 24px}
+      header{
+        position:sticky;top:0;z-index:10;
+        backdrop-filter: blur(10px);
+        background: linear-gradient(180deg, rgba(18,8,24,.7), rgba(18,8,24,.2));
+        border-bottom:1px solid rgba(255,255,255,.08)
+      }
+      .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+      .logo{font-weight:800;letter-spacing:.5px}
+      .logo span{color:var(--lavender)}
+      .btn{
+        padding:12px 20px;border-radius:14px;
+        background:linear-gradient(135deg,var(--purple-grape),var(--lavender));
+        color:#120818;font-weight:700;box-shadow:0 10px 30px rgba(159,140,207,.35)
+      }
+      .btn.outline{
+        background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)
+      }
+
+      /* HERO */
+      .hero{padding:120px 0 96px;position:relative;overflow:hidden}
+      .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px}
+      .badge{
+        display:inline-block;padding:6px 12px;border-radius:999px;
+        background:rgba(159,140,207,.15);color:var(--lavender);
+        border:1px solid rgba(159,140,207,.35);margin-bottom:16px
+      }
+      h1{font-size:clamp(36px,5vw,56px);line-height:1.1;margin-bottom:16px}
+      .subtitle{color:#d9d2ff;opacity:.9;margin-bottom:28px;font-size:18px}
+      .actions{display:flex;gap:16px}
+      .mock{
+        height:420px;border-radius:28px;
+        background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.02));
+        border:1px solid rgba(255,255,255,.18);
+        box-shadow: inset 0 0 60px rgba(159,140,207,.15), 0 40px 120px rgba(31,16,43,.8);
+        position:relative
+      }
+
+      .mock img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:28px;
+      position:relative;
+      z-index:2;
+      }
+
+      .mock::after{
+        content:"";position:absolute;inset:24px;border-radius:20px;
+        background:linear-gradient(135deg, rgba(159,140,207,.35), rgba(58,27,87,.35));
+        filter: blur(18px)
+      }
+
+      /* STEPS */
+      section{padding:96px 0}
+      .section-title{text-align:center;margin-bottom:56px}
+      .section-title h2{font-size:40px}
+      .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+      .card{
+        background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
+        border:1px solid rgba(255,255,255,.14);
+        border-radius:24px;padding:28px;box-shadow:0 20px 60px rgba(31,16,43,.6)
+      }
+      .card h3{margin:12px 0}
+
+      /* BENEFITS */
+      .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+      .pill{padding:8px 12px;border-radius:12px;background:rgba(159,140,207,.15)}
+
+      /* EDITOR */
+      .editor{
+        height:520px;border-radius:32px;margin-top:24px;
+        background:linear-gradient(135deg, rgba(31,16,43,.9), rgba(58,27,87,.9));
+        border:1px solid rgba(255,255,255,.18);
+        box-shadow:0 40px 120px rgba(31,16,43,.8)
+      }
+
+      /* TESTIMONIALS */
+      .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+      /* CTA */
+      .cta{
+        background:linear-gradient(135deg, var(--purple-grape), var(--lavender));
+        color:#120818;border-radius:40px;padding:72px;display:flex;
+        align-items:center;justify-content:space-between
+      }
+      .cta h2{font-size:40px}
+
+      footer{padding:48px 0;text-align:center;color:#cfc6ff}
+
+      @media(max-width:900px){
+        .hero-grid{grid-template-columns:1fr}
+        .cards,.grid,.testimonials{grid-template-columns:1fr}
+        .cta{flex-direction:column;gap:24px;text-align:center}
+      }
+      

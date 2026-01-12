@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template - Restaurante</title>
+  <link href="styles.css" rel="stylesheet">
+  <style>
+    .rest-hero{padding:60px 0;background:linear-gradient(90deg,#3a1b57,#1f102b);color:#fff}
+    .rest-hero .logo{font-size:28px}
+    .restaurant-intro{display:flex;gap:24px;align-items:center;margin-top:20px}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .dish{background:rgba(255,255,255,.03);padding:16px;border-radius:12px}
+    .dish .price{color:var(--lavender);font-weight:700;margin-top:8px}
+    .reserve{margin-top:18px}
+    @media(max-width:900px){.restaurant-intro{flex-direction:column}.menu-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">Bistrô <span>CriaAI</span></div>
+      <a class="btn" href="#reserve">Reservar mesa</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="rest-hero">
+      <div class="container">
+        <h1>Sabores artesanais</h1>
+        <p class="subtitle">Experiência gastronômica com ingredientes locais.</p>
+        <div class="restaurant-intro">
+          <div style="flex:1">
+            <p>Aberto diariamente. Especialidades do chef e harmonização de vinhos.</p>
+            <div class="reserve"><a class="btn" id="reserve" href="#">Reservar agora</a></div>
+          </div>
+          <div style="width:320px;height:200px;border-radius:12px;background:linear-gradient(135deg,#9f8ccf,#3a1b57);display:flex;align-items:center;justify-content:center">Imagem</div>
+        </div>
+
+        <div class="section-title" style="margin-top:28px"><h2>Menu Destaque</h2></div>
+        <div class="menu-grid">
+          <div class="dish"><strong>Risoto de Cogumelos</strong><div class="muted small">Arborio, manteiga e parmesão</div><div class="price">R$ 59,90</div></div>
+          <div class="dish"><strong>Peito de Frango Grelhado</strong><div class="muted small">Molho de ervas e legumes</div><div class="price">R$ 49,90</div></div>
+          <div class="dish"><strong>Filé ao Molho de Vinho</strong><div class="muted small">Acompanhado de batatas rústicas</div><div class="price">R$ 79,90</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2025 Bistrô CriaAI</div>
+  </footer>
+</body>
+</html>
