@@ -1,7 +1,7 @@
 const API_BASE_URL =
   location.hostname === "localhost"
     ? "http://localhost:3000"
-    : "https://criai-backend-1.onrender.com";
+    : "https://criai-backend-2.onrender.com";
 
 // Variável global
 window.generatedSiteCode = "";
