@@ -4,90 +4,138 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Template - Portfólio</title>
-  <link href="css/styles.css" rel="stylesheet">
   <style>
-    :root{
-      --primary:#2d2d2d;
-      --secondary:#f0f0f0;
-      --accent:#ff9f43;
-      --text:#333
+    :root {
+      --primary: #2d2d2d;
+      --secondary: #f0f0f0;
+      --accent: #ff9f43;
+      --text: #333;
+      --white: #ffffff;
     }
 
-    body{
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Roboto, sans-serif;
       background: linear-gradient(180deg, #f8f9fa, #f0f0f0);
-      color:#333
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    header{
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
       background: rgba(255,255,255,0.95);
-      border-bottom:1px solid rgba(0,0,0,.1);
-      box-shadow:0 2px 8px rgba(0,0,0,.05)
+      border-bottom: 1px solid rgba(0,0,0,.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    .logo{color:#2d2d2d}
-    .logo span{color:var(--accent)}
+    .nav { display: flex; justify-content: space-between; align-items: center; }
 
-    .btn{
-      background:linear-gradient(135deg,var(--accent),#ff7f50);
-      box-shadow:0 5px 15px rgba(255,159,67,.3)
+    .logo { color: var(--primary); font-size: 24px; font-weight: 800; text-decoration: none; }
+    .logo span { color: var(--accent); }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: linear-gradient(135deg, var(--accent), #ff7f50);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(255,159,67,.3);
+      transition: 0.3s;
     }
 
-    .pf-hero{
-      padding:120px 0 60px;
-      background:linear-gradient(135deg,#2d2d2d,#404040);
-      color:#fff;
-      text-align:center
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,159,67,.4); }
+
+    .pf-hero {
+      padding: 100px 0 60px;
+      background: linear-gradient(135deg, #2d2d2d, #404040);
+      color: #fff;
+      text-align: center;
+      margin-bottom: 50px;
     }
 
-    .pf-hero h1{color:#fff}
-    .pf-hero .subtitle{color:#d0d0d0}
+    .pf-hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .pf-hero .subtitle { color: #d0d0d0; font-size: 1.2rem; }
 
-    .section-title h2{color:#2d2d2d}
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 2rem; color: var(--primary); }
 
-    .pf-grid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px
+    /* GRID DE PROJETOS */
+    .pf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo automático */
+      gap: 30px;
+      margin-bottom: 80px;
     }
 
-    .pf-card{
-      background:#fff;
-      border:1px solid rgba(0,0,0,.08);
-      border-radius:12px;padding:24px;
-      box-shadow:0 5px 15px rgba(0,0,0,.08);
-      transition:all 0.3s ease;
-      cursor:pointer
+    .pf-card {
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden; /* Garante que a imagem respeite o arredondamento */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
     }
 
-    .pf-card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 15px 40px rgba(255,159,67,.2);
-      border-color:var(--accent)
+    .pf-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(255,159,67,0.15);
+      border-color: var(--accent);
     }
 
-    .pf-card .thumb{
-      width:100%;height:180px;background:linear-gradient(135deg,#ff9f43,#ff7f50);
-      border-radius:8px;display:flex;align-items:center;justify-content:center;
-      color:#fff;font-weight:600;margin-bottom:16px;
-      font-size:14px
+    /* CONTAINER DA IMAGEM CORRIGIDO */
+    .thumb {
+      width: 100%; /* Ocupa toda a largura do card */
+      height: 220px; /* Altura fixa para manter o padrão */
+      background: #eee;
+      position: relative;
+      overflow: hidden;
     }
 
-    .pf-card h3{color:#2d2d2d;margin-bottom:8px}
-
-    .pf-card .muted{color:#888}
-
-    footer{
-      background:#2d2d2d;color:#ccc;border-top:none
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* A mágica para não distorcer a foto */
+      display: block;
     }
 
-    @media(max-width:900px){
-      .pf-grid{grid-template-columns:1fr}
+    /* Texto do Card */
+    .card-content {
+      padding: 20px;
+    }
+
+    .pf-card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.4rem; }
+    .pf-card .muted { color: #666; font-size: 0.95rem; }
+
+    footer {
+      background: var(--primary);
+      color: #ccc;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    @media(max-width:600px){
+      .pf-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-    <div class="logo">Cria<span>AI</span></div>
-    <a href="index.html" class="btn">Início</a>
+      <a href="#" class="logo">Cria<span>AI</span></a>
+      <a href="#" class="btn">Início</a>
     </div>
   </header>
 
@@ -101,16 +149,43 @@
 
     <section class="container">
       <div class="section-title"><h2>Projetos Recentes</h2></div>
+      
       <div class="pf-grid">
-        <div class="pf-card"><div class="thumb">Projeto A</div><h3>Identidade Visual</h3><p class="muted small">Marca para startup de tecnologia.</p></div>
-        <div class="pf-card"><div class="thumb">Projeto B</div><h3>Website Corporativo</h3><p class="muted small">Layout responsivo e CMS integrado.</p></div>
-        <div class="pf-card"><div class="thumb">Projeto C</div><h3>Campanha Digital</h3><p class="muted small">Peças e landing para performance.</p></div>
+        <div class="pf-card">
+          <div class="thumb">
+            <img src="assets/portfolio1.png" alt="Identidade Virtual">
+          </div>
+          <div class="card-content">
+            <h3>Identidade Virtual</h3>
+            <p class="muted">Criação de marca e manual de identidade visual para startup.</p>
+          </div>
+        </div>
+
+        <div class="pf-card">
+          <div class="thumb">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Website">
+          </div>
+          <div class="card-content">
+            <h3>Website Corporativo</h3>
+            <p class="muted">Layout responsivo focado em conversão e usabilidade.</p>
+          </div>
+        </div>
+
+        <div class="pf-card">
+          <div class="thumb">
+            <img src="assets/portfolio2.png" alt="Campanha">
+          </div>
+          <div class="card-content">
+            <h3>Campanha Digital</h3>
+            <p class="muted">Gestão de tráfego e peças para redes sociais.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© 2025 CriaAI</div>
+    <div class="container">© 2026 CriaAI - Todos os direitos reservados.</div>
   </footer>
 </body>
 </html>
