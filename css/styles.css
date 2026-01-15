@@ -127,4 +127,77 @@
         .cards,.grid,.testimonials,.pf-grid{grid-template-columns:1fr}
         .cta{flex-direction:column;gap:24px;text-align:center}
       }
+
+
+
+      /* =========================
+   MOBILE FIX (REAL)
+========================= */
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Container não pode limitar no mobile */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 64px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Mock visual */
+  .mock {
+    height: 320px;
+    margin-top: 32px;
+  }
+
+  /* Section spacing */
+  section {
+    padding: 64px 0;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
       
