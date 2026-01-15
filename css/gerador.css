@@ -1,243 +1,123 @@
-/* =========================
-   RESET E BASE
-========================= */
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-:root {
-  --lavender: #a78bfa;
-  --text-muted: #9ca3af;
-}
-
-html {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #0b0b12;
-  color: white;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-/* =========================
-   NAV
-========================= */
-
-.nav {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 12px 16px;
-  width: 100%;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.nav nav {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-/* =========================
-   BOTÕES
-========================= */
-
-.btn {
-  width: 100%;
-  padding: 14px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 16px;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Botão Outline */
-
-.btn.outline {
-  background: rgba(167, 139, 250, 0.08);
-  border: 1px solid rgba(167, 139, 250, 0.35);
-  color: var(--lavender);
-}
-
-.btn.outline:hover {
-  background: rgba(167, 139, 250, 0.18);
-  transform: translateY(-2px);
-}
-
-/* Botão Principal */
-
-#generateBtn {
-  background: linear-gradient(135deg, #a78bfa, #7c3aed);
-  color: white;
-}
-
-#generateBtn:hover:not(:disabled) {
-  box-shadow: 0 0 30px rgba(167, 139, 250, 0.4);
-  filter: brightness(1.1);
-}
-
-#generateBtn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  background: #4b5563;
-}
-
-/* =========================
-   CRIAR SITE
-========================= */
-
 .criarsite {
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 16px;
-  width: 100%;
+  padding: 60px 24px;
 }
 
 .criarsite-card {
   width: 100%;
   max-width: 680px;
-  padding: 28px 20px;
+  padding: 60px;
   text-align: center;
-  background: rgba(20, 20, 30, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 40px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 50px 120px rgba(0,0,0,0.4);
 }
 
 .criarsite-card h1 {
-  font-size: 26px;
-  margin-bottom: 14px;
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 16px;
   background: linear-gradient(90deg, #fff, var(--lavender));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .criarsite-card p {
-  font-size: 14px;
   color: var(--text-muted);
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .criarsite-card textarea {
   width: 100%;
-  padding: 14px;
-  border-radius: 16px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
   color: white;
-  font-size: 15px;
+  font-size: 17px;
   font-family: inherit;
   resize: vertical;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   transition: 0.3s;
 }
 
 .criarsite-card textarea:focus {
   outline: none;
   border-color: var(--lavender);
-  box-shadow: 0 0 18px rgba(167, 139, 250, 0.15);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
 }
 
-/* =========================
-   PREVIEW
-========================= */
-
-#previewContainer {
-  animation: slideUp 0.4s ease-out;
+.criarsite-card .btn {
+  width: 100%;
+  padding: 18px;
+  font-size: 18px;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* =========================
-   DESKTOP (>= 768px)
-========================= */
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
 
-  .nav {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 32px;
-  }
-
-  .nav nav {
-    flex-direction: row;
-    width: auto;
-  }
-
-  .btn {
-    width: auto;
-    padding: 16px 22px;
-    font-size: 16px;
-  }
-
+  /* Criar site */
   .criarsite {
-    padding: 60px 24px;
+    padding: 32px 14px;
   }
 
   .criarsite-card {
-    padding: 56px;
-    border-radius: 40px;
+    padding: 32px 20px;
+    border-radius: 24px;
   }
 
   .criarsite-card h1 {
-    font-size: clamp(32px, 5vw, 42px);
+    font-size: 26px;
   }
 
   .criarsite-card p {
-    font-size: 16px;
-    margin-bottom: 40px;
+    font-size: 14px;
+    margin-bottom: 24px;
   }
 
   .criarsite-card textarea {
-    padding: 20px;
-    font-size: 17px;
-    border-radius: 20px;
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 16px;
   }
-}
 
-.container {
-  width: 100% !important;
-  max-width: 100% !important;
-}
+  .criarsite-card .btn {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
 
+  /* Auth */
+  .auth-container {
+    padding: 24px 14px;
+  }
 
-/* =========================
-   MOBILE EXTRA SAFETY
-========================= */
+  .auth-card {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
 
-@media (max-width: 480px) {
-  .criarsite-card {
-    backdrop-filter: none;
+  .auth-card h2 {
+    font-size: 24px;
+  }
+
+  .auth-subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .auth-card input {
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .auth-link {
+    font-size: 13px;
   }
 }
