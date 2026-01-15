@@ -160,7 +160,10 @@
 #generateBtn {
   background: linear-gradient(135deg, #a78bfa, #7c3aed);
   color: white;
-  margin-bottom: 12px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 #generateBtn:hover:not(:disabled) {
@@ -175,4 +178,31 @@
 }
 
 
-/* jhb */
+.btn.outline {
+  background: rgba(167, 139, 250, 0.05);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  color: #a78bfa; /* Cor Lavanda */
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn.outline:hover {
+  background: rgba(167, 139, 250, 0.12);
+  border-color: #a78bfa;
+  transform: translateY(-2px);
+}
+
+#previewContainer {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
