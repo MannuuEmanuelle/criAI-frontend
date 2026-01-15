@@ -3,18 +3,31 @@ const API_BASE_URL =
     ? "http://localhost:3000"
     : "https://criai-backend-2.onrender.com";
 
-// Variável global
+
 window.generatedSiteCode = "";
 
 document.addEventListener("DOMContentLoaded", () => {
   const aiForm = document.getElementById("aiForm");
   const generateBtn = document.getElementById("generateBtn");
   const previewContainer = document.getElementById("previewContainer");
+  const viewBtn = document.getElementById("viewBtn");
 
+  if (viewBtn) {
+    viewBtn.addEventListener("click", () => {
+      if (window.generatedSiteCode) {
+        
+        const blob = new Blob([window.generatedSiteCode], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+      } else {
+        alert("Nenhum site foi gerado ainda.");
+      }
+    });
+  }
+  
   if (aiForm) {
     aiForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-
       const promptValue = document.getElementById("prompt").value.trim();
 
       generateBtn.disabled = true;
@@ -28,14 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify({ prompt: promptValue })
         });
 
-        if (!response.ok) {
-          throw new Error("Erro na resposta do servidor");
-        }
-
         const data = await response.json();
 
         if (data.html) {
-          window.generatedSiteCode = data.html;
+          
+          window.generatedSiteCode = data.html; 
           previewContainer.style.display = "block";
           alert("Seu site foi gerado pela IA!");
         }
