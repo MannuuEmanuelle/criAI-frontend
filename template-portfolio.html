@@ -4,8 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Template - Portfólio</title>
-  <!-- <link href="portfolioStyles.css" rel="stylesheet"> -->
-  
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#2d2d2d;
+      --secondary:#f0f0f0;
+      --accent:#ff9f43;
+      --text:#333
+    }
+
+    body{
+      background: linear-gradient(180deg, #f8f9fa, #f0f0f0);
+      color:#333
+    }
+
+    header{
+      background: rgba(255,255,255,0.95);
+      border-bottom:1px solid rgba(0,0,0,.1);
+      box-shadow:0 2px 8px rgba(0,0,0,.05)
+    }
+
+    .logo{color:#2d2d2d}
+    .logo span{color:var(--accent)}
+
+    .btn{
+      background:linear-gradient(135deg,var(--accent),#ff7f50);
+      box-shadow:0 5px 15px rgba(255,159,67,.3)
+    }
+
+    .pf-hero{
+      padding:120px 0 60px;
+      background:linear-gradient(135deg,#2d2d2d,#404040);
+      color:#fff;
+      text-align:center
+    }
+
+    .pf-hero h1{color:#fff}
+    .pf-hero .subtitle{color:#d0d0d0}
+
+    .section-title h2{color:#2d2d2d}
+
+    .pf-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px
+    }
+
+    .pf-card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:12px;padding:24px;
+      box-shadow:0 5px 15px rgba(0,0,0,.08);
+      transition:all 0.3s ease;
+      cursor:pointer
+    }
+
+    .pf-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 15px 40px rgba(255,159,67,.2);
+      border-color:var(--accent)
+    }
+
+    .pf-card .thumb{
+      width:100%;height:180px;background:linear-gradient(135deg,#ff9f43,#ff7f50);
+      border-radius:8px;display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:600;margin-bottom:16px;
+      font-size:14px
+    }
+
+    .pf-card h3{color:#2d2d2d;margin-bottom:8px}
+
+    .pf-card .muted{color:#888}
+
+    footer{
+      background:#2d2d2d;color:#ccc;border-top:none
+    }
+
+    @media(max-width:900px){
+      .pf-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
   <header>

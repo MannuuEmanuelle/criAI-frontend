@@ -3,40 +3,289 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Template - Eletrônicos</title>
-  <!-- <link href="styles.css" rel="stylesheet"> -->
+  <title>Template - Eletrônicos Premium</title>
+  <link href="css/styles.css" rel="stylesheet">
   <style>
-    .elec-hero{padding:40px 0;background:linear-gradient(90deg,#0b0610,#1f102b);color:#fff}
-    .elec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
-    .elec-card{background:rgba(255,255,255,.02);padding:12px;border-radius:10px;text-align:center}
-    .price{font-weight:800;margin-top:8px}
-    @media(max-width:900px){.elec-grid{grid-template-columns:1fr 1fr}}
+    :root{
+      --primary:#00d4ff;
+      --secondary:#0088ff;
+      --accent:#ff6b35;
+      --dark:#0a1428;
+      --darker:#05090f
+    }
+
+    /* Hero Section */
+    .elec-hero{
+      padding:80px 0;
+      background:linear-gradient(135deg,rgba(10,20,40,0.9),rgba(0,136,255,0.1));
+      border-bottom:2px solid var(--primary)
+    }
+    
+    .hero-content{
+      text-align:center;margin-bottom:60px
+    }
+    
+    .hero-content h1{font-size:clamp(32px,6vw,52px);margin-bottom:16px;color:var(--primary)}
+    
+    .hero-content .subtitle{font-size:18px;color:#e0e0ff}
+    
+    /* Badge Section */
+    .features-badge{
+      display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap
+    }
+    
+    .badge{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:8px 16px;border-radius:999px;
+      background:rgba(0,212,255,.15);color:var(--primary);
+      border:1px solid rgba(0,212,255,.5);font-size:13px
+    }
+    
+    /* Products Grid */
+    .elec-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:40px
+    }
+    
+    .elec-card{
+      background:linear-gradient(180deg,rgba(0,212,255,.08),rgba(0,136,255,.04));
+      padding:20px;border-radius:16px;border:1px solid rgba(0,212,255,.2);
+      transition:all 0.3s ease;cursor:pointer;
+      box-shadow:0 10px 30px rgba(0,136,255,.15)
+    }
+    
+    .elec-card:hover{
+      transform:translateY(-8px);
+      background:linear-gradient(180deg,rgba(0,212,255,.15),rgba(0,136,255,.1));
+      border-color:rgba(0,212,255,.6);
+      box-shadow:0 20px 50px rgba(0,212,255,.35)
+    }
+    
+    .elec-thumb{
+      width:100%;height:180px;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(0,136,255,.1));
+      border-radius:12px;display:flex;align-items:center;justify-content:center;
+      color:var(--primary);font-weight:600;margin-bottom:16px;
+      font-size:32px
+    }
+    
+    .elec-card strong{
+      font-size:16px;display:block;margin-bottom:8px;color:#fff
+    }
+    
+    .elec-card .specs{
+      font-size:12px;color:#a0d0ff;margin-bottom:12px;line-height:1.4
+    }
+    
+    .elec-card .price{
+      font-weight:800;color:var(--primary);font-size:20px;margin-bottom:12px
+    }
+    
+    .elec-card .old-price{
+      font-size:12px;color:#666;text-decoration:line-through;margin-right:8px
+    }
+    
+    .elec-card .discount{
+      display:inline-block;background:var(--accent);color:#fff;padding:2px 6px;
+      border-radius:4px;font-size:11px;font-weight:700
+    }
+    
+    /* Categories Section */
+    .categories{
+      padding:60px 0;background:rgba(0,212,255,.02);border-top:1px solid rgba(0,212,255,.15)
+    }
+    
+    .categories .section-title h2{margin-bottom:40px;color:#fff}
+    
+    .categories-grid{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px
+    }
+    
+    .category-card{
+      padding:24px;background:rgba(0,212,255,.08);border-radius:14px;
+      text-align:center;transition:all 0.3s ease;cursor:pointer;
+      border:1px solid rgba(0,212,255,.25)
+    }
+    
+    .category-card:hover{
+      background:rgba(0,212,255,.15);border-color:rgba(0,212,255,.5);
+      box-shadow:0 10px 30px rgba(0,212,255,.2)
+    }
+    
+    .category-card .icon{font-size:32px;margin-bottom:12px}
+    
+    .category-card strong{display:block;font-size:16px;color:#fff}
+    
+    /* Info Section */
+    .info-section{
+      padding:60px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px
+    }
+    
+    .info-box{
+      text-align:center
+    }
+    
+    .info-box h3{margin-bottom:12px;color:var(--primary)}
+    
+    .info-box p{color:#d0e8ff;font-size:14px;line-height:1.6}
+    
+    /* Footer */
+    footer{padding:48px 0;text-align:center;color:#a0d0ff;border-top:1px solid rgba(0,212,255,.15)}
+    
+    @media(max-width:900px){
+      .elec-grid{grid-template-columns:repeat(2,1fr)}
+      .elec-hero{padding:60px 0}
+    }
+    
+    @media(max-width:600px){
+      .elec-grid{grid-template-columns:1fr}
+      .features-badge{flex-direction:column;align-items:center}
+      .hero-content h1{font-size:28px}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
-    <div class="logo">Cria<span>AI</span></div>
+      <div class="logo">Cria<span>AI</span></div>
       <a href="index.html" class="btn">Início</a>
     </div>
   </header>
 
   <main>
-    <section class="elec-hero container">
-      <h1>Eletrônicos em oferta</h1>
-      <p class="subtitle">Os melhores gadgets com garantia e frete rápido.</p>
+    <!-- Hero Section -->
+    <section class="elec-hero">
+      <div class="container hero-content">
+        <h1>Tecnologia de Última Geração</h1>
+        <p class="subtitle">Produtos premium com melhor preço do mercado</p>
+        <div class="features-badge">
+          <span class="badge">✓ Frete Grátis</span>
+          <span class="badge">✓ Garantia 2 Anos</span>
+          <span class="badge">✓ Suporte 24/7</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container" style="padding:80px 0">
+      <div style="text-align:center;margin-bottom:56px">
+        <h2 style="font-size:40px;margin-bottom:12px">Melhores Ofertas</h2>
+        <p class="subtitle" style="margin-bottom:0">Seleção de eletrônicos em promoção</p>
+      </div>
 
       <div class="elec-grid">
-        <div class="elec-card"><div class="thumb">Img</div><strong>Fone Pro</strong><div class="price">R$ 299,00</div></div>
-        <div class="elec-card"><div class="thumb">Img</div><strong>Smartwatch X</strong><div class="price">R$ 699,00</div></div>
-        <div class="elec-card"><div class="thumb">Img</div><strong>Drone Mini</strong><div class="price">R$ 999,00</div></div>
-        <div class="elec-card"><div class="thumb">Img</div><strong>Caixa Bluetooth</strong><div class="price">R$ 149,00</div></div>
+        <div class="elec-card">
+          <div class="elec-thumb">📱</div>
+          <strong>Smartphone Pro Max</strong>
+          <div class="specs">Tela 6.7" • 256GB • 5G</div>
+          <div><span class="old-price">R$ 4.599</span><span class="discount">-15%</span></div>
+          <div class="price">R$ 3.899,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">🎧</div>
+          <strong>Fones Wireless Pro</strong>
+          <div class="specs">ANC • 30h Bateria</div>
+          <div><span class="old-price">R$ 899</span><span class="discount">-20%</span></div>
+          <div class="price">R$ 699,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">⌚</div>
+          <strong>Smartwatch Elite</strong>
+          <div class="specs">AMOLED • GPS • Fitness</div>
+          <div><span class="old-price">R$ 1.299</span><span class="discount">-25%</span></div>
+          <div class="price">R$ 999,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">🚁</div>
+          <strong>Drone 4K Ultra</strong>
+          <div class="specs">Câmera 4K • 45min Voo</div>
+          <div><span class="old-price">R$ 1.599</span><span class="discount">-30%</span></div>
+          <div class="price">R$ 1.199,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">💻</div>
+          <strong>Tablet Pro 12"</strong>
+          <div class="specs">M2 Chip • 256GB</div>
+          <div><span class="old-price">R$ 2.999</span><span class="discount">-18%</span></div>
+          <div class="price">R$ 2.499,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">🔊</div>
+          <strong>Caixa Bluetooth Premium</strong>
+          <div class="specs">360° • IPX7 • 24h</div>
+          <div><span class="old-price">R$ 399</span><span class="discount">-35%</span></div>
+          <div class="price">R$ 249,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">⚡</div>
+          <strong>Carregador Rápido 120W</strong>
+          <div class="specs">USB-C • 2 Portas</div>
+          <div><span class="old-price">R$ 299</span><span class="discount">-40%</span></div>
+          <div class="price">R$ 179,00</div>
+        </div>
+
+        <div class="elec-card">
+          <div class="elec-thumb">🎮</div>
+          <strong>Console Portátil</strong>
+          <div class="specs">1000+ Jogos • 8GB RAM</div>
+          <div><span class="old-price">R$ 1.899</span><span class="discount">-22%</span></div>
+          <div class="price">R$ 1.499,00</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+      <div class="container">
+        <div class="section-title">
+          <h2>Categorias Populares</h2>
+        </div>
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="icon">📱</div>
+            <strong>Smartphones</strong>
+          </div>
+          <div class="category-card">
+            <div class="icon">💻</div>
+            <strong>Computadores</strong>
+          </div>
+          <div class="category-card">
+            <div class="icon">🎧</div>
+            <strong>Áudio</strong>
+          </div>
+          <div class="category-card">
+            <div class="icon">⌚</div>
+            <strong>Wearables</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="container">
+      <div class="info-section">
+        <div class="info-box">
+          <h3>Envio Rápido</h3>
+          <p>Entregamos em toda Brasil em até 5 dias úteis com rastreamento completo</p>
+        </div>
+        <div class="info-box">
+          <h3>Segurança Garantida</h3>
+          <p>Produtos 100% originais com certificação e garantia estendida disponível</p>
+        </div>
+        <div class="info-box">
+          <h3>Suporte Total</h3>
+          <p>Equipe disponível 24/7 por chat, email e telefone para ajudar você</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">© 2025 CriaAI</div>
+    <div class="container">© 2025 CriaAI - Tecnologia de Ponta</div>
   </footer>
 </body>
 </html>
