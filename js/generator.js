@@ -49,13 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
           previewContainer.style.display = "block";
           alert("Seu site foi gerado pela IA!");
         }
-      } catch (err) {
-        console.error(err);
-        alert("Erro ao gerar o site.");
-      } finally {
-        generateBtn.disabled = false;
-        generateBtn.innerText = "Gerar Catálogo Agora";
+      } 
+      catch (err) {
+      console.error(err);
+      if (err.message === 'Failed to fetch') {
+        alert("Erro de conexão: Verifique sua internet e tente novamente.");
+      } else {
+        alert("Erro ao gerar o site. Tente novamente em instantes.");
       }
+    } finally {
+      generateBtn.disabled = false;
+      generateBtn.innerText = "Gerar Catálogo Agora";
+    }
     });
   }
 });
+
+
+  
